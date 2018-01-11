@@ -1,0 +1,21 @@
+{
+    "name": "sumeet/github-api-test",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sumeet Badiger",
+            "email": "badigersumeet@gmail.com"
+        }
+    ],
+    "require": {
+        "knplabs/github-api": "2.0.0",
+        "php-http/guzzle6-adapter": "^1.1",
+        "symfony/console": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "Sumeet\\": "src/"
+        }
+    }
+
+}
