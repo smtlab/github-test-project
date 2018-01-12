@@ -1,9 +1,9 @@
 # Github Test Project
 
-# Installation
+# Installation Steps (Comamnds)
 * git clone https://github.com/smtlab/github-test-project.git
-* composer install
-* Note: This project is not production readys 
+* cd to project folder and run `composer install`
+* `php src/app github:import <database> <user> <password>`
 
 # Description
 This is a demo project which demonstrates the pulling of data through github php api.

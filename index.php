@@ -16,8 +16,17 @@
     <div class="container">
       <div class="row">
         <div class="co-md-6 offset-md-3 my-4 ">
-          <h1>Github Symfony Repositories!</h1>
-          <strong id="loading">Loading..</strong>
+          <div class="row">
+            <div class="col-md-12">
+              <h1>Github Symfony Repositories!</h1>
+              <strong id="loading">Loading..</strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="text" class="form-control search" id="search" placeholder="Search">
+            </div>
+          </div>
           <ul class="list-unstyled" id="repos">
           </ul>
           <ul id="pagination" class="pagination-sm"></ul>
@@ -35,14 +44,23 @@
     $(document).ready(function() {
 
       var load = function(page) {
+
         $('#repos').empty();
         $('#loading').show();
+
+        var data = {
+          page: page
+        };
+        console.log($('#search').val());
+
+        if($('#search').val() != '') {
+          data.search = $('#search').val();
+        }
+
         $.ajax({
-          url: '/api.php',
+          url: '/data.php',
           type: 'get',
-          data: {
-            page: page
-          },
+          data: data,
           success: function(d) {
             $('#loading').hide();
             $.each(d.data, function(i,v) {
@@ -69,6 +87,12 @@
               console.log('onPageCLick')
                 load(page);
             }
+        });
+
+        $('#search').keyup(function(e){
+
+          load(1);
+
         });
 
 
