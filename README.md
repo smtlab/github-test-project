@@ -8,7 +8,7 @@ In this case the repositories for user `symfony` is being pulled and dumped to t
 * git clone https://github.com/smtlab/github-test-project.git
 * cd to project folder and run `composer install`
 * `php src/app github:import <database> <user> <password>` Ex: `php src/app github:import github_repos root dbpass123`
-* Thats it! Navigate to github-api-test/index.php to browse imported data
+* Thats it! Navigate to github-test-project/index.php to browse imported data
 
 # Dependencies
 * `knplabs/github-api` - For fetching github data
